@@ -3,7 +3,7 @@
 ##### 添加以下插件
 ###### [luci-theme-rosy](#/README.md)    &nbsp;&nbsp;&nbsp;&nbsp;#主题-rosy
 ###### [luci-theme-edge](#/README.md)   &nbsp;&nbsp;&nbsp;&nbsp;#主题-edge
-###### [luci-theme-opentomcat](#/README.md)  &nbsp;&nbsp;&nbsp;&nbsp;#主题-opentomcat
+###### [luci-theme-mcat](#/README.md)  &nbsp;&nbsp;&nbsp;&nbsp;#主题-mcat
 ###### [luci-theme-opentopd](#/README.md)  &nbsp;&nbsp;&nbsp;&nbsp;#主题-opentopd<br>
 ###### [luci-theme-atmaterial](#/README.md)  &nbsp;&nbsp;&nbsp;&nbsp;#atmaterial-主题<br>
 ###### [luci-theme-rosy](#/README.md)   &nbsp;&nbsp;&nbsp;&nbsp;#主题-rosy<br>
