@@ -1,4 +1,4 @@
-# [lede源码-openwrt的专用软件包]
+# lede源码openwrt自用软件包
 
 
 ##### 添加以下插件
