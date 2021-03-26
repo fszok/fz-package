@@ -1,8 +1,5 @@
-# [[281677160/build-openwrt的专用软件包](https://github.com/281677160/build-openwrt.git)]
+# openwrt的专用软件包
 
-#
-#### 分支[master]的为lede源码专用，分支[19.07]的为lienol源码专用，分支[project-18.06]的为project源码专用
-#
 
 ##### 添加以下插件
 ###### [luci-theme-rosy](#/README.md)    &nbsp;&nbsp;&nbsp;&nbsp;#主题-rosy
@@ -65,6 +62,3 @@
 #
 ## 感谢各位大神的源码，openwrt有各位大神而精彩，感谢！感谢！，插件每天白天12点跟晚上12点都同步一次各位大神的源码！
 
-#
-
-# 请不要Fork此仓库，你Fork后，插件不会自动根据作者更新而更新!!!!!!!!!!!
