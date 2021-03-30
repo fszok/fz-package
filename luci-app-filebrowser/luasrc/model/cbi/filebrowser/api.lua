@@ -303,10 +303,10 @@ function to_move(file)
         sys.call("/bin/rm -rf /tmp/filebrowser_extract.*")
         return {code = 1, error = i18n.translate("Client file is required.")}
     end
-    local executable_directory =
-        uci_get_type("global", "executable_directory", "/tmp")
-    luci.sys.exec("mkdir -p " .. executable_directory)
-    local client_path = executable_directory .. "/" .. appname
+    local project_directory =
+        uci_get_type("global", "project_directory", "/tmp")
+    luci.sys.exec("mkdir -p " .. project_directory)
+    local client_path = project_directory .. "/" .. appname
     local client_path_bak
 
     if fs.access(client_path) then
