@@ -1,6 +1,7 @@
 # openwrt-lede源码专用软件包
 
 ##### 添加以下插件
+###### [luci-app-fileassistant](#/README.md)    &nbsp;&nbsp;&nbsp;&nbsp;#文件助手
 ###### [luci-theme-rosy](#/README.md)    &nbsp;&nbsp;&nbsp;&nbsp;#主题-rosy
 ###### [luci-theme-edge](#/README.md)   &nbsp;&nbsp;&nbsp;&nbsp;#主题-edge
 ###### [luci-theme-mcat](#/README.md)  &nbsp;&nbsp;&nbsp;&nbsp;#主题-mcat
