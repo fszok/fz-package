@@ -1,6 +1,7 @@
 # openwrt-lede源码专用软件包
 
 ##### 添加以下插件
+###### [luci-app-onliner](#/README.md)    &nbsp;&nbsp;&nbsp;&nbsp;#路由联机信息
 ###### [luci-app-godproxy](#/README.md)    &nbsp;&nbsp;&nbsp;&nbsp;#KoolProxy改版去广告效果不错!
 ###### [luci-app-fileassistant](#/README.md)    &nbsp;&nbsp;&nbsp;&nbsp;#文件助手
 ###### [luci-theme-rosy](#/README.md)    &nbsp;&nbsp;&nbsp;&nbsp;#主题-rosy
