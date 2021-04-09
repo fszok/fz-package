@@ -1,7 +1,8 @@
 # openwrt-lede源码专用软件包
 
 ##### 添加以下插件
-###### [luci-app-advancedsetting](#/README.md)    &nbsp;&nbsp;&nbsp;&nbsp;#openwrt高级命令行设置
+###### [luci-app-advanced](#/README.md)   &nbsp;&nbsp;&nbsp;&nbsp;#高级设置自用版已去掉引发冲突的文件浏览器.
+###### [luci-app-advancedsetting](#/README.md)    &nbsp;&nbsp;&nbsp;&nbsp;#openwrt高级设置基础版
 ###### [luci-app-onliner](#/README.md)    &nbsp;&nbsp;&nbsp;&nbsp;#路由联机信息
 ###### [luci-app-godproxy](#/README.md)    &nbsp;&nbsp;&nbsp;&nbsp;#KoolProxy改版去广告效果不错!
 ###### [luci-app-fileassistant](#/README.md)    &nbsp;&nbsp;&nbsp;&nbsp;#文件助手
@@ -15,7 +16,6 @@
 ###### [luci-app-serverchan](#/README.md)    &nbsp;&nbsp;&nbsp;&nbsp;#微信推送<br>
 ###### [luci-app-eqos](#/README.md)   &nbsp;&nbsp;&nbsp;&nbsp;#内网控速 内网IP限速工具，和Turbo ACC 网络加速有冲突<br>
 ###### [luci-app-jd-dailybonus](#/README.md)    &nbsp;&nbsp;&nbsp;&nbsp;#京东签到<br>
-###### [luci-app-advanced](#/README.md)   &nbsp;&nbsp;&nbsp;&nbsp;#[luci-app-advanced&nbsp;高级设置&nbsp;+&nbsp;luci-app-filebrowser&nbsp;文件浏览器（文件管理）](#/README.md)，luci-app-advanced和luci-app-filebrowser不能同时编译<br>
 ###### [luci-app-poweroff](#/README.md)    &nbsp;&nbsp;&nbsp;&nbsp;#关机（增加关机功能）<br>
 ###### [luci-theme-argon](#/README.md)   &nbsp;&nbsp;&nbsp;&nbsp;#新的argon主题<br>
 ###### [luci-app-argon-config](#/README.md)    &nbsp;&nbsp;&nbsp;&nbsp;#argon主题设置（编译时候选上,在固件的‘系统’里面）<br>
@@ -44,8 +44,6 @@
 ###### [luci-app-ddnsto](#/README.md)    &nbsp;&nbsp;&nbsp;&nbsp;#DDNSTO 通过穿透技术，不需要公网 IP 也可以访问内网设备
 #
 
-- 编译luci-app-advanced时候自动带上luci-app-filebrowser ，高级设置+文件浏览器（文件管理），所以luci-app-advanced和luci-app-filebrowser不能同时编译，只能二选一
-
 - luci-app-samba 和 luci-app-samba4 不能同时编译，同时编译会失败
 - 想选择luci-app-samba4，首先在Extra packages ---> 把autosamba取消，在选择插件的那里把luci-app-samba取消，然后在Network ---> 把 samba36-server取消，最后选择luci-app-samba4，记得顺序别搞错
 
@@ -55,6 +53,4 @@
 - luci-app-autotimeset 和 luci-app-autoreboot 不能同时编译，同时编译会编译失败
 
 - luci-app-ddnsto  如果有兼容性问题，安装好固件后执行 `/etc/init.d/ddnsto enable` 命令，这个插件是由两部分组成的，有一部分在Network --->里面默认自动选择的，如果你不需要这个插件，又不想默选择这个的话，在.config的配置文件里面加入一句 `# CONFIG_PACKAGE_ddnsto is not set` 就行，一般不是太小的闪存机子都不需要理会这个东西的，x86的除外，其他机子编译时候增加这个插件会有编译失败风险，实在想用的话，就编译好固件后再用命令安装插件好了
-#
-##### 如果还是没有你需要的插件，请不要一下子就拉取别人的插件包
-##### 相同的文件都拉一起，因为有一些可能还是其他大神修改过的容易造成编译错误的
+

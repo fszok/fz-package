@@ -199,27 +199,6 @@ e.remove("/tmp/openclash")
 end
 end
 end
-if nixio.fs.access("/etc/config/AdGuardHome")then
-s:tab("AdGuardHomeconf",translate("配置AdGuardHome"),translate("本页是配置/etc/config/AdGuardHome的文档内容。应用保存后自动重启生效"))
-conf=s:taboption("AdGuardHomeconf",Value,"AdGuardHomeconf",nil,translate("开头的数字符号（＃）或分号的每一行（;）被视为注释；删除（;）启用指定选项。"))
-conf.template="cbi/tvalue"
-conf.rows=20
-conf.wrap="off"
-conf.cfgvalue=function(t,t)
-return e.readfile("/etc/config/AdGuardHome")or""
-end
-conf.write=function(a,a,t)
-if t then
-t=t:gsub("\r\n?","\n")
-e.writefile("/tmp/AdGuardHome",t)
-if(luci.sys.call("cmp -s /tmp/AdGuardHome /etc/config/AdGuardHome")==1)then
-e.writefile("/etc/config/AdGuardHome",t)
-luci.sys.call("/etc/init.d/AdGuardHome restart >/dev/null")
-end
-e.remove("/tmp/AdGuardHome")
-end
-end
-end
 if nixio.fs.access("/etc/pcap-dnsproxy/Config.conf")then
 s:tab("pcapconf",translate("配置pcap-dnsproxy"),translate("本页是配置/etc/pcap-dnsproxy/Config.conf的文档内容。应用保存后自动重启生效"))
 conf=s:taboption("pcapconf",Value,"pcapconf",nil,translate("开头的数字符号（＃）或分号的每一行（;）被视为注释；删除（;）启用指定选项。"))
