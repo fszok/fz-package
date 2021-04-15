@@ -21,7 +21,6 @@
 ###### [luci-app-argon-config](#/README.md)    &nbsp;&nbsp;&nbsp;&nbsp;#argon主题设置（编译时候选上,在固件的‘系统’里面）<br>
 ###### [luci-app-oaf （OpenAppFilter）](#/README.md)  &nbsp;&nbsp;&nbsp;&nbsp;#应用过滤 ，该模块只工作在路由模式， 旁路模式、桥模式不生效，还有和Turbo ACC 网络加速有冲突<br>
 ###### [luci-app-gost](#/README.md)   &nbsp;&nbsp;&nbsp;&nbsp;#GO语言实现的安全隧道<br>
-###### [luci-app-cpulimit](#/README.md)   &nbsp;&nbsp;&nbsp;&nbsp;#CPU性能限制<br>
 ###### [luci-app-autotimeset](#/README.md)   &nbsp;&nbsp;&nbsp;&nbsp;#定时重启、定时关机、定时重启网络，替代luci-app-autoreboot，[不能同时编译](#/README.md) <br>
 ###### [luci-app-control-webrestriction](#/README.md)   &nbsp;&nbsp;&nbsp;&nbsp;#访问限制<br>
 ###### [luci-app-control-weburl](#/README.md)   &nbsp;&nbsp;&nbsp;&nbsp;#网址过滤<br>
