@@ -42,7 +42,7 @@ function serverchand_init(){
 	[ ! -f "/usr/sbin/wrtbwmon" ] && echo "`date "+%Y-%m-%d %H:%M:%S"` 【！！！】未安装 wrtbwmon ，流量统计不可用" >> ${logfile}
 	[ -z "$ip_version" ] && echo "`date "+%Y-%m-%d %H:%M:%S"` 【！！！】无法获取依赖项 iputils-arping 版本号，请确认插件是否正常运行" >> ${logfile}
 	[ -z "$cu_version" ] && echo "`date "+%Y-%m-%d %H:%M:%S"` 【！！！】无法获取依赖项 curl 版本号，请确认插件是否正常运行" >> ${logfile}
-	[ -z "$sckey" ] && [ -z "$tg_token" ] && echo "`date "+%Y-%m-%d %H:%M:%S"` 【！！！】请填写正确的 sckey " >> ${logfile} && return 1
+	[ -z "$sckey" ] && [ -z "$sctkey" ] && [ -z "$tgtoken" ] && echo "`date "+%Y-%m-%d %H:%M:%S"` 【！！！】请填写正确的 sckey " >> ${logfile} && return 1
 	local interfacelist=`getinterfacelist` && [ -z "$interfacelist" ] && echo "`date "+%Y-%m-%d %H:%M:%S"` 【！！！】无法正确获取接口信息，请确认插件是否正常运行" >> ${logfile}
 	return 0
 }
@@ -355,7 +355,7 @@ function serverchand_cron(){
 		return
 	fi
 	
-# 重置流量
+	# 重置流量
 	if [ ! -z "$reset_regularly" ] && [ "$reset_regularly" -eq "1" ]; then
 		crontab -l > conf && echo -e "0 0 * * * rm /tmp/serverchand/usage.db >/dev/null 2>&1" >> conf && crontab conf && rm -f conf >/dev/null 2>&1
 		crontab -l > conf && echo -e "0 0 * * * rm /tmp/serverchand/usage6.db >/dev/null 2>&1" >> conf && crontab conf && rm -f conf >/dev/null 2>&1
@@ -364,13 +364,9 @@ function serverchand_cron(){
 	[ ! -z "$regular_time_3" ] && local regular_time_3=",${regular_time_3}"
 	# 定时发送
 	if [ ! -z "$regular_time" ] || [ ! -z "$regular_time_2" ] || [ ! -z "$regular_time_3" ]; then
-		( echo `crontab -l`|grep "serverchand"|grep -q " $regular_time$regular_time_2$regular_time_3 " ) && return
-		del_cron
 		crontab -l > conf && echo -e "0 $regular_time$regular_time_2$regular_time_3 * * * /usr/bin/serverchand/serverchand send &" >> conf && crontab conf && rm -f conf >/dev/null 2>&1
 	# 间隔发送
 	elif [ ! -z "$interval_time" ]; then
-		( echo `crontab -l`|grep "serverchand"|grep -q " */$interval_time " ) && return
-		del_cron
 		crontab -l > conf && echo -e "0 */$interval_time * * * /usr/bin/serverchand/serverchand send &" >> conf && crontab conf && rm -f conf >/dev/null 2>&1
 	fi
 	re_cron
